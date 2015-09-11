@@ -30,7 +30,7 @@ fi
 rsync -a --delete --delete-excluded --exclude=containers --exclude=.git \
     "${BASE}/../" "${BASE}/${IMAGE}/src"
 
-docker build -t "${NAME}" "${BASE}/${IMAGE}"
+docker build -t "${NAME}:latest" "${BASE}/${IMAGE}"
 
 popd
 popd
