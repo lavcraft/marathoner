@@ -9,7 +9,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/bobrik/marathoner"
+	"github.com/lavcraft/marathoner"
 )
 
 func main() {

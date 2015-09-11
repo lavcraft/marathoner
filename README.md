@@ -77,7 +77,7 @@ update interval of 1 second and two marathon hosts.
 Updater is reachable at port 7676.
 
 ```
-docker run -d -p 7676:7676 bobrik/marathoner-updater:1.10 \
+docker run -d -p 7676:7676 lavcraft/marathoner-updater:1.10 \
   -m http://marathon1:8080,http://marathon2:8080 -i 1
 ```
 
@@ -88,7 +88,7 @@ two updaters and publishes apps on `127.0.0.1`.
 Notice that you need to run listener with `--net=host`.
 
 ```
-docker run -d --net=host bobrik/marathoner-listener:1.10 \
+docker run -d --net=host lavcraft/marathoner-listener:1.10 \
   -u marathoner-updater1:7676,marathoner-updater2:7676 -b 127.0.0.1
 ```
 
@@ -98,7 +98,7 @@ The following command runs marathoner logger with
 specified updater and logs state changes to stdout:
 
 ```
-docker run --rm bobrik/marathoner-logger:1.10 -u marathoner-updater1:7676
+docker run --rm lavcraft/marathoner-logger:1.10 -u marathoner-updater1:7676
 ```
 
 ### Exposing apps

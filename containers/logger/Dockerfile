@@ -1,6 +1,6 @@
-FROM golang:1.4-wheezy
+FROM golang:1.5-wheezy
 
 ADD ./src/ /go/src
-RUN GOPATH=/go go get github.com/bobrik/marathoner/...
+RUN GOPATH=/go go get github.com/lavcraft/marathoner/...
 
 ENTRYPOINT ["/go/bin/logger"]

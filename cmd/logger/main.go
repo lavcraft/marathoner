@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/bobrik/marathoner"
+	"github.com/lavcraft/marathoner"
 	"os"
 	"strings"
 	"time"

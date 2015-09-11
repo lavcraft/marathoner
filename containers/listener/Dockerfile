@@ -9,6 +9,6 @@ ADD ./haproxy.cfg.template /etc/haproxy/haproxy.cfg.template
 ADD ./run.sh /run.sh
 
 ADD ./src/ /go/src
-RUN GOPATH=/go go get github.com/bobrik/marathoner/...
+RUN GOPATH=/go go get github.com/lavcraft/marathoner/...
 
 ENTRYPOINT ["/run.sh"]

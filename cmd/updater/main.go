@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/bobrik/marathoner"
+	"github.com/lavcraft/marathoner"
 	"log"
 	"strings"
 	"time"

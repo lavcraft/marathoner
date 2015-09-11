@@ -3,6 +3,8 @@
 # Script to build docker images from dockerfiles and fresh code
 
 set -e
+pushd $(dirname $BASH_SOURCE)
+pushd ../
 
 IMAGE=$1
 if [ -z "${IMAGE}" ]; then
@@ -18,12 +20,15 @@ fi
 
 BASE=$(cd "$(dirname $0)" && pwd)
 
-if [[ "${BASE}" != *src/github.com/bobrik/marathoner/containers ]]; then
-    echo "Not in the right tree, expected src/github.com/bobrik/marathoner"
+if [[ "${BASE}" != *marathoner/containers ]]; then
+    echo "Not in the right tree, expected marathoner"
     exit 1
 fi
 
-rsync -a --delete --delete-excluded --exclude=github.com/bobrik/marathoner/containers \
-    "${BASE}/../../../../" "${BASE}/${IMAGE}/src"
+rsync -a --delete --delete-excluded --exclude=marathoner/containers \
+    "${BASE}" "${BASE}/${IMAGE}/src"
 
 docker build -t "${NAME}" "${BASE}/${IMAGE}"
+
+popd
+popd
