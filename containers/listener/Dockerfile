@@ -1,4 +1,4 @@
-FROM golang:1.4-wheezy
+FROM golang:1.5-wheezy
 
 RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list.d/backports.list && \
     apt-get update && \
